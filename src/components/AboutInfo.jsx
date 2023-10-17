@@ -2,10 +2,10 @@ import React from "react";
 
 const AboutInfo = () => {
   return (
-    <section className="pt-20 pb-20 lg:pb-12">
+    <section className="pt-20 pb-20 lg:pb-12 container">
       <div className="grid grid-cols-12 gap-[30px]">
         <div className="col-span-6 relative w-full  px-4 ">
-          <div className="  ">
+          <div>
             <img className="" src="images/metis-dashboard-square.png" alt="" />
           </div>
         </div>
