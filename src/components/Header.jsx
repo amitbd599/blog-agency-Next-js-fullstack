@@ -6,9 +6,9 @@ const Header = () => {
     <section>
       <div className="container px-4 mx-auto">
         <nav className="flex items-center py-6">
-          <a className="text-3xl font-semibold leading-none" href="#">
+          <Link className="text-3xl font-semibold leading-none" href="/">
             <img className="h-10" src="images/logo.svg" alt="" width="auto" />
-          </a>
+          </Link>
           <div className="lg:hidden ml-auto">
             <button className="navbar-burger flex items-center py-2 px-3 text-blue-600 hover:text-blue-700 rounded border border-blue-200 hover:border-blue-300">
               <svg
