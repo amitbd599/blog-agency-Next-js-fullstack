@@ -1,6 +1,44 @@
+"use client";
+
+import { useRef } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import {
+  ErrorToast,
+  IsEmail,
+  IsEmpty,
+  SuccessToast,
+} from "@/utility/FormHelper";
+import { Toaster } from "react-hot-toast";
 export default function Home() {
+  const router = useRouter();
+  let emailRef,
+    passwordRef = useRef();
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+
+    let email = emailRef.value;
+    let password = passwordRef.value;
+    if (IsEmpty(email)) {
+      ErrorToast("Email Required!");
+    } else if (IsEmail(email)) {
+      ErrorToast("Email address is not valid!");
+    } else if (IsEmpty(password)) {
+      ErrorToast("Password Required!");
+    } else {
+      let res = await axios.post("api/user/login", { email, password });
+      if (res.data.status === "success") {
+        SuccessToast("Login Success!");
+        router.replace("/dashboard");
+      } else {
+        ErrorToast("Email or Password Wrong!");
+      }
+    }
+  };
+
   return (
-    <main>
+    <>
+      <Toaster position="top-center" reverseOrder={false} />
       <section className="py-12 bg-blue-600 h-screen flex justify-center items-center">
         <div className="container px-4 mx-auto">
           <div className="flex max-w-md mx-auto flex-col text-center">
@@ -15,7 +53,10 @@ export default function Home() {
                 width="auto"
               />
             </a>
-            <div className="mt-12 mb-8 p-8 bg-white rounded">
+            <form
+              onSubmit={handelSubmit}
+              className="mt-12 mb-8 p-8 bg-white rounded"
+            >
               <span className="text-sm text-gray-400">Sign In</span>
               <h4 className="mb-6 text-3xl">Join our community</h4>
               <div className="flex mb-4 px-4 bg-gray-50 rounded">
@@ -23,6 +64,7 @@ export default function Home() {
                   className="w-full py-4 text-xs placeholder-gray-400 font-semibold leading-none bg-gray-50 outline-none"
                   type="email"
                   placeholder="name@email.com"
+                  ref={(input) => (emailRef = input)}
                 />
                 <svg
                   className="h-6 w-6 ml-4 my-auto text-gray-300"
@@ -44,6 +86,7 @@ export default function Home() {
                   className="w-full py-4 text-xs placeholder-gray-400 font-semibold leading-none bg-gray-50 outline-none"
                   type="password"
                   placeholder="Enter your password"
+                  ref={(input) => (passwordRef = input)}
                 />
                 <button className="ml-4">
                   <svg
@@ -68,10 +111,13 @@ export default function Home() {
                   </svg>
                 </button>
               </div>
-              <button className="block w-full p-4 text-center text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded">
+              <button
+                type="submit"
+                className="block w-full p-4 text-center text-xs text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded"
+              >
                 Sign In
               </button>
-            </div>
+            </form>
             <div>
               <p className="text-xs text-blue-200 text-center">
                 <a className="underline hover:text-blue-100" href="#">
@@ -86,6 +132,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

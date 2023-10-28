@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `blog` MODIFY `des` VARCHAR(60000) NOT NULL;

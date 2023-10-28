@@ -33,7 +33,7 @@ model blog {
   id       Int      @id @default(autoincrement())
   title    String   @db.VarChar(50)
   imgCDN   String   @db.VarChar(300)
-  des      String   @db.VarChar(30000)
+  des      String   @db.VarChar(60000)
   createAt DateTime @default(now()) @db.Timestamp(0)
   updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
