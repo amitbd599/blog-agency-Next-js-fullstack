@@ -3,7 +3,7 @@ import React from "react";
 const Service = () => {
   return (
     <section className="pt-20">
-      <div className="container px-4 mx-auto">
+      <div className="container  mx-auto">
         <div className="max-w-lg mx-auto mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold font-heading">
             Lorem ipsum dolor sit amet consectutar domor

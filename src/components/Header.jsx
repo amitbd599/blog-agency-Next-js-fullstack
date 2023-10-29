@@ -4,7 +4,7 @@ import React from "react";
 const Header = () => {
   return (
     <section>
-      <div className="container px-4 mx-auto">
+      <div className="container  mx-auto">
         <nav className="flex items-center py-6">
           <Link className="text-3xl font-semibold leading-none" href="/">
             <img className="h-10" src="images/logo.svg" alt="" width="auto" />

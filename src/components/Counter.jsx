@@ -3,7 +3,7 @@ import React from "react";
 const Counter = () => {
   return (
     <section className="py-10 bg-blueGray-50">
-      <div className="container px-4 mx-auto">
+      <div className="container  mx-auto">
         <div className="flex flex-wrap lg:flex-nowrap bg-white shadow rounded">
           <div className="w-full md:w-1/2 lg:w-1/4 px-4 py-6 text-center border-b lg:border-b-0 md:border-r">
             <p className="text-md lg:text-base text-blueGray-400">

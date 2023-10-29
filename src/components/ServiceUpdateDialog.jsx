@@ -7,26 +7,22 @@ import {
   DialogFooter,
   Typography,
 } from "@material-tailwind/react";
-import ReactQuill from "react-quill";
-import { QuillScript } from "@/utility/QuillScript";
+
 import {
-  read_single_blog__Request__API,
-  update_blog__Request__API,
+  read_single_service__Request__API,
+  update_service__Request__API,
 } from "@/utility/api";
 import { SuccessToast } from "@/utility/FormHelper";
 
-
-export function BlogUpdateDialog({ id }) {
+export function ServiceUpdateDialog({ id }) {
   let titleRef,
     imgCDNRef = useRef();
-  const [editorData, setEditorData] = useState("");
-  const [blog, setBlog] = useState([]);
+  const [service, setService] = useState([]);
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);
-    read_single_blog__Request__API(id).then((res) => {
-      setBlog(res?.data[0]);
-      setEditorData(res?.data[0]?.des);
+    read_single_service__Request__API(id).then((res) => {
+      setService(res?.data[0]);
     });
   };
 
@@ -37,11 +33,11 @@ export function BlogUpdateDialog({ id }) {
   const submit = (id) => {
     let title = titleRef.value;
     let imgCDN = imgCDNRef.value;
-    let des = editorData;
-    update_blog__Request__API({ title, imgCDN, des, id }).then((res) => {
+
+    update_service__Request__API({ title, imgCDN, id }).then((res) => {
       if (res) {
         handelClose();
-        SuccessToast("Blog update successful!");
+        SuccessToast("Service update successful!");
       }
     });
   };
@@ -74,7 +70,7 @@ export function BlogUpdateDialog({ id }) {
           <DialogHeader className="flex flex-col items-start">
             {" "}
             <Typography className="mb-1" variant="h4">
-              Edit Blog
+              Edit Service
             </Typography>
           </DialogHeader>
           <svg
@@ -99,22 +95,14 @@ export function BlogUpdateDialog({ id }) {
             <input
               className="border p-2 border-gray-300"
               placeholder="Title"
-              defaultValue={blog?.title}
+              defaultValue={service?.title}
               ref={(input) => (titleRef = input)}
             />
             <input
               className="border p-2 border-gray-300"
               placeholder="Img CDN"
-              defaultValue={blog?.imgCDN}
+              defaultValue={service?.imgCDN}
               ref={(input) => (imgCDNRef = input)}
-            />
-            <ReactQuill
-              className=" block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner min-h-[200px] h-[300px] pb-[50px] overflow-y-auto"
-              theme="snow"
-              value={editorData}
-              onChange={setEditorData}
-              modules={QuillScript.modules}
-              formats={QuillScript.formats}
             />
           </div>
         </DialogBody>
@@ -125,7 +113,7 @@ export function BlogUpdateDialog({ id }) {
           <Button
             variant="gradient"
             color="gray"
-            onClick={() => submit(blog?.id)}
+            onClick={() => submit(service?.id)}
           >
             Update
           </Button>

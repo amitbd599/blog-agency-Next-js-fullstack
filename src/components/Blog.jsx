@@ -13,7 +13,7 @@ const Blog = () => {
         src="saturn-assets/images/blog/orange-light-center.png"
         alt=""
       />
-      <div className="relative container px-4">
+      <div className="relative container ">
         <div className="max-w-lg  mb-16 ">
           <h2 className="mb-4 text-4xl font-bold font-heading">
             Lorem ipsum dolor sit amet consectutar domor

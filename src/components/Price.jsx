@@ -8,7 +8,7 @@ const Price = () => {
         backgroundImage: 'url("metis-assets/backgrounds/intersect.svg")',
       }}
     >
-      <div className="container px-4 mx-auto">
+      <div className="container  mx-auto">
         <div className="text-center mb-16">
           <h2 className="max-w-lg mx-auto mb-4 text-4xl font-bold font-heading">
             <span>Start saving time today and</span>

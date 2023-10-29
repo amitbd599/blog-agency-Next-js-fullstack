@@ -6,7 +6,7 @@ const NewsLetter = () => {
       className="py-20 bg-top bg-no-repeat"
       style={{ backgroundImage: 'url("metis-assets/elements/blob.svg")' }}
     >
-      <div className="container px-4 mx-auto">
+      <div className="container  mx-auto">
         <div className="relative py-20 px-4 lg:p-20">
           <div className="absolute top-0 left-0 -mt-8">
             <img className="h-16" src="images/dots-left.svg" alt="" />

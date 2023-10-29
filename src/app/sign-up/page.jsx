@@ -53,7 +53,7 @@ const page = () => {
     <>
       <Toaster position="top-center" reverseOrder={false} />
       <section className="py-12 bg-blue-600 h-screen flex justify-center items-center">
-        <div className="container px-4 mx-auto">
+        <div className="container  mx-auto">
           <div className="flex max-w-md mx-auto flex-col text-center">
             <a
               className="block mx-auto text-3xl text-white font-semibold leading-none"

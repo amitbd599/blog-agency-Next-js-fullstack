@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <section className="relative">
       <div className="hidden lg:block absolute inset-0 w-1/2 ml-auto bg-gray-50" />
-      <div className="container px-4 mx-auto">
+      <div className="container  mx-auto">
         <div className="relative flex flex-wrap -mx-4">
           <div className="w-full lg:w-1/2 pt-20 px-4 max-w-lg lg:max-w-full mx-auto lg:mx-0 text-center lg:text-left">
             <a

@@ -7,15 +7,15 @@ const Hero = () => {
         className="hidden lg:block absolute inset-0 w-1/2 ml-auto  z-0"
         style={{ zIndex: -1 }}
       />
-      <div className="container px-4 mx-auto">
+      <div className="container  mx-auto">
         <div className="flex flex-wrap items-center -mx-3">
           <div className="w-full lg:w-1/2 px-3">
             <div className="py-12">
               <div className="max-w-lg lg:max-w-md mx-auto lg:mx-0 mb-8 text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl mb-4 font-bold font-heading">
-                  <span>The quick</span>
-                  <span className="text-blue-600">brown fox</span>
-                  <span>jumps over the lazy dog.</span>
+                  <span> The quick </span>
+                  <span className="text-blue-600"> brown fox</span>
+                  <span> jumps over the lazy dog.</span>
                 </h2>
                 <p className="text-gray-400 leading-relaxed">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed

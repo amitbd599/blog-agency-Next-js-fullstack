@@ -3,7 +3,7 @@ import React from "react";
 const Contact = () => {
   return (
     <section className="py-20">
-      <div className="container px-4 mx-auto">
+      <div className="container  mx-auto">
         <div className="max-w-2xl mx-auto text-center">
           <div className="max-w-md mb-8 mx-auto">
             <span className="text-sm text-gray-400">Contact Us</span>

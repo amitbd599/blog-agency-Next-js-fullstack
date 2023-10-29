@@ -12,7 +12,7 @@ import { Toaster } from "react-hot-toast";
 import ReactQuill from "react-quill";
 import { QuillScript } from "@/utility/QuillScript";
 import { DeleteAlertBlogPost } from "@/utility/DeleteAlert";
-import { MessageDialog } from "@/components/BlogUpdateDialog";
+import { BlogUpdateDialog } from "@/components/BlogUpdateDialog";
 
 export default function Page() {
   const [editorData, setEditorData] = useState("");
@@ -204,7 +204,7 @@ export default function Page() {
                             />
                           </svg>
                         </span>
-                        <MessageDialog id={item.id} />
+                        <BlogUpdateDialog id={item.id} />
                       </div>
                     </td>
                   </tr>
