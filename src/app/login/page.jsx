@@ -14,9 +14,10 @@ export default function Home() {
   const router = useRouter();
   let emailRef,
     passwordRef = useRef();
+
+
   const handelSubmit = async (e) => {
     e.preventDefault();
-
     let email = emailRef.value;
     let password = passwordRef.value;
     if (IsEmpty(email)) {
@@ -35,6 +36,7 @@ export default function Home() {
       }
     }
   };
+  
 
   return (
     <>

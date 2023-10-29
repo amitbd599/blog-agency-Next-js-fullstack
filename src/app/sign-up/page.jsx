@@ -1,5 +1,4 @@
 "use client";
-
 import { useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -17,6 +16,8 @@ const page = () => {
     lastNameRef,
     emailRef,
     passwordRef = useRef();
+
+
   const handelSubmit = async (e) => {
     e.preventDefault();
 
@@ -24,6 +25,7 @@ const page = () => {
     let lastName = lastNameRef.value;
     let email = emailRef.value;
     let password = passwordRef.value;
+
     if (IsEmpty(email)) {
       ErrorToast("Email Required!");
     } else if (IsEmail(email)) {
@@ -49,6 +51,8 @@ const page = () => {
       }
     }
   };
+
+
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />

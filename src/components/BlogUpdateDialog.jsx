@@ -17,11 +17,14 @@ import { SuccessToast } from "@/utility/FormHelper";
 
 
 export function BlogUpdateDialog({ id }) {
+
   let titleRef,
     imgCDNRef = useRef();
   const [editorData, setEditorData] = useState("");
   const [blog, setBlog] = useState([]);
   const [open, setOpen] = useState(false);
+
+
   const handleOpen = () => {
     setOpen(!open);
     read_single_blog__Request__API(id).then((res) => {
@@ -93,6 +96,9 @@ export function BlogUpdateDialog({ id }) {
         </div>
         <DialogBody>
           <div className="grid gap-6">
+            <Typography className="-mb-1" color="blue-gray" variant="h6">
+              ID = {blog?.id}
+            </Typography>
             <Typography className="-mb-1" color="blue-gray" variant="h6">
               Title
             </Typography>

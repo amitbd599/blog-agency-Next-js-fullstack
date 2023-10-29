@@ -15,10 +15,13 @@ import { DeleteAlertBlogPost } from "@/utility/DeleteAlert";
 import { BlogUpdateDialog } from "@/components/BlogUpdateDialog";
 
 export default function Page() {
+
   const [editorData, setEditorData] = useState("");
   const [blog, setBlog] = useState([]);
   let titleRef,
     imgCDNRef = useRef();
+
+
   const submit = (e) => {
     e.preventDefault();
     let title = titleRef.value;
@@ -36,6 +39,8 @@ export default function Page() {
       }
     });
   };
+
+
 
   const deleteBlogControl = (id) => {
     DeleteAlertBlogPost(id).then((res) => {

@@ -7,11 +7,9 @@ export async function POST(req, res) {
   try {
     let reqBody = await req.json();
     let prisma = new PrismaClient();
-
     let result = await prisma.users.findMany({
       where: reqBody,
     });
-    console.log(result);
 
     if (result.length === 0) {
       return NextResponse.json({ status: "Fail", data: result });
