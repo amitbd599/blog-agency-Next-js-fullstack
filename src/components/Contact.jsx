@@ -1,6 +1,40 @@
-import React from "react";
+'use client'
+import { ErrorToast, IsEmail, IsEmpty, SuccessToast } from "@/utility/FormHelper";
+import axios from "axios";
+
+import React, { useRef } from "react";
 
 const Contact = () => {
+
+  let emailRef, subRef, nameRef, msgRef= useRef();
+
+
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+    let email = emailRef.value;
+    let sub = subRef.value;
+    let name = nameRef.value;
+    let msg = msgRef.value;
+
+    if (IsEmpty(email)) {
+      ErrorToast("Email Required!");
+    } else if (IsEmail(email)) {
+      ErrorToast("Email address is not valid!");
+    } else if (IsEmpty(sub)) {
+      ErrorToast("Subject Required!");
+    } else if (IsEmpty(name)) {
+      ErrorToast("Name Required!");
+    }else if (IsEmpty(msg)) {
+      ErrorToast("Msg Required!");
+    }else {
+      let res = await axios.post("api/user/mail", { email, sub, name, msg });
+      if (res.data.status === "Success") {
+        SuccessToast("Message Sent Success!");
+      } else {
+        ErrorToast("Message Sent Fail!");
+      }
+    }
+  };
   return (
     <section className="py-20">
       <div className="container  mx-auto">
@@ -12,12 +46,13 @@ const Contact = () => {
             </h2>
           </div>
           <div>
-            <form>
+            <form onSubmit={handelSubmit}>
               <div className="mb-4">
                 <input
                   className="w-full p-4 text-xs font-semibold leading-none bg-gray-50 rounded outline-none"
                   type="text"
                   placeholder="Subject"
+                  ref={(input) => (subRef = input)}
                 />
               </div>
               <div className="mb-4">
@@ -25,6 +60,7 @@ const Contact = () => {
                   className="w-full p-4 text-xs font-semibold leading-none bg-gray-50 rounded outline-none"
                   type="text"
                   placeholder="Name"
+                  ref={(input) => (nameRef = input)}
                 />
               </div>
               <div className="mb-4">
@@ -32,6 +68,7 @@ const Contact = () => {
                   className="w-full p-4 text-xs font-semibold leading-none bg-gray-50 rounded outline-none"
                   type="email"
                   placeholder="name@example.com"
+                  ref={(input) => (emailRef = input)}
                 />
               </div>
               <div className="mb-4">
@@ -40,6 +77,7 @@ const Contact = () => {
                   type="text"
                   placeholder="Message..."
                   defaultValue={""}
+                  ref={(input) => (msgRef = input)}
                 />
               </div>
               <div className="flex justify-between items-center">

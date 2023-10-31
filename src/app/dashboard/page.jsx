@@ -112,12 +112,7 @@ export default function Home() {
                               Service Image
                             </th>
 
-                            <th
-                              scope="col"
-                              className="px-6 py-4 font-medium text-gray-900"
-                            >
-                              Action
-                            </th>
+                            
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100 border-t border-gray-100">

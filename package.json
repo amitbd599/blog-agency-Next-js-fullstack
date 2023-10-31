@@ -14,11 +14,15 @@
     "axios": "^1.6.0",
     "jose": "^5.0.1",
     "next": "13.5.4",
+    "nodemailer": "^6.9.7",
+    "nodemailer-smtp-transport": "^2.7.4",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
+    "react-html-parser": "^2.0.2",
     "react-icons": "^4.11.0",
     "react-quill": "^2.0.0",
+    "smtp": "^0.1.4",
     "sweetalert2": "^11.7.32"
   },
   "devDependencies": {

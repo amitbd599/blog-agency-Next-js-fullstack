@@ -4,15 +4,26 @@ import Header from "@/components/Header";
 import NewsLetter from "@/components/NewsLetter";
 import Price from "@/components/Price";
 import Service from "@/components/Service";
+import {PrismaClient} from "@prisma/client";
 
-export default function Home() {
+async function getData() {
+  const prisma=new PrismaClient();
+  let blogs= await prisma.service.findMany({
+      orderBy: {id: 'desc'}
+  })
+
+  return blogs
+}
+
+export default async function Home() {
+  const data=await getData()
   return (
     <main>
       {/* Header Section */}
       <Header />
 
       {/* Service */}
-      <Service />
+      <Service data={data}/>
 
       {/* Price */}
       <Price />

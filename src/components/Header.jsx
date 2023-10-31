@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container  mx-auto">
         <nav className="flex items-center py-6">
           <Link className="text-3xl font-semibold leading-none" href="/">
-            <img className="h-10" src="images/logo.svg" alt="" width="auto" />
+            <img className="h-10" src="/images/logo.svg" alt="" width="auto" />
           </Link>
           <div className="lg:hidden ml-auto">
             <button className="navbar-burger flex items-center py-2 px-3 text-blue-600 hover:text-blue-700 rounded border border-blue-200 hover:border-blue-300">

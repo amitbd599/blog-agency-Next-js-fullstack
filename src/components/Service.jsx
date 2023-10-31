@@ -1,6 +1,6 @@
 import React from "react";
 
-const Service = () => {
+const Service = ({data}) => {
   return (
     <section className="pt-20">
       <div className="container  mx-auto">
@@ -13,87 +13,20 @@ const Service = () => {
             eget justo et iaculis.
           </p>
         </div>
-        <div className="flex flex-wrap -mx-3">
-          <div className="w-1/2 lg:w-1/4 px-3 mb-20">
+        <div className="grid grid-cols-12 gap-[30px] -mx-3">
+          {
+            data.map((item,index)=><div key={index} className=" col-span-3 rounded-xl px-[20px] py-[50px] mb-20 shadow-xl">
             <img
               className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-              src="images/advertisement.png"
+              src={item?.imgCDN}
               alt=""
             />
             <h3 className="sm:text-2xl font-bold font-heading text-center">
-              Weekly Sales
+             {item?.title}
             </h3>
-          </div>
-          <div className="w-1/2 lg:w-1/4 px-3 mb-20">
-            <img
-              className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-              src="images/analytics.png"
-              alt=""
-            />
-            <h3 className="sm:text-2xl font-bold font-heading text-center">
-              General Analytics
-            </h3>
-          </div>
-          <div className="w-1/2 lg:w-1/4 px-3 mb-20">
-            <img
-              className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-              src="images/hourglass.png"
-              alt=""
-            />
-            <h3 className="sm:text-2xl font-bold font-heading text-center">
-              Saving your time
-            </h3>
-          </div>
-          <div className="w-1/2 lg:w-1/4 px-3 mb-20">
-            <img
-              className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-              src="images/calculation.png"
-              alt=""
-            />
-            <h3 className="sm:text-2xl font-bold font-heading text-center">
-              Calculations
-            </h3>
-          </div>
-          <div className="w-1/2 lg:w-1/4 px-3 mb-20">
-            <img
-              className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-              src="images/card-payment.png"
-              alt=""
-            />
-            <h3 className="sm:text-2xl font-bold font-heading text-center">
-              Fast payments
-            </h3>
-          </div>
-          <div className="w-1/2 lg:w-1/4 px-3 mb-20">
-            <img
-              className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-              src="images/podcast.png"
-              alt=""
-            />
-            <h3 className="sm:text-2xl font-bold font-heading text-center">
-              Daily podcasts
-            </h3>
-          </div>
-          <div className="w-1/2 lg:w-1/4 px-3 mb-20">
-            <img
-              className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-              src="images/online-shopping.png"
-              alt=""
-            />
-            <h3 className="sm:text-2xl font-bold font-heading text-center">
-              E-commerce
-            </h3>
-          </div>
-          <div className="w-1/2 lg:w-1/4 px-3 mb-20">
-            <img
-              className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-              src="images/video-web.png"
-              alt=""
-            />
-            <h3 className="sm:text-2xl font-bold font-heading text-center">
-              Advertisement
-            </h3>
-          </div>
+          </div>)
+          }
+          
         </div>
       </div>
     </section>
