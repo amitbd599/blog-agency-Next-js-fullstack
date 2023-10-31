@@ -20,7 +20,7 @@ async function getData() {
 export default async function  Home () {
 
   const data=await getData()
-
+  console.log(data)
   return (
     <main>
       {/* Header Section */}
@@ -28,6 +28,7 @@ export default async function  Home () {
 
       {/* Blog */}
       <Blog data={data}/>
+
       {/* Action */}
       <Action />
 

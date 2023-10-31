@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const Blog = ({data}) => {
+  
   return (
     <section className="relative py-20 overflow-hidden">
       <img
@@ -35,6 +36,8 @@ const Blog = ({data}) => {
                   </h4>
                   <div className="hidden group-hover:flex justify-end mt-5 items-center text-orange-900 font-semibold">
                     <span className="mr-2">Read article</span>
+                    <span className="mr-2">{""}</span>
+                    
                     <svg
                       width={8}
                       height={12}

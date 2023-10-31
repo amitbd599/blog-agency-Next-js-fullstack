@@ -11,9 +11,9 @@ async function getData() {
   let blogs= await prisma.service.findMany({
       orderBy: {id: 'desc'}
   })
-
   return blogs
 }
+
 
 export default async function Home() {
   const data=await getData()

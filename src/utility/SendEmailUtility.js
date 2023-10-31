@@ -20,7 +20,7 @@ export async function SendEmail(name,
     );
 
     let mailOptions = {
-        from: `amitbd590@gmail.com`,
+        from: email,
         to: `amitbd599@gmail.com`,
         subject: EmailSubject,
         text: EmailText
